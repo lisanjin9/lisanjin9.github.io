@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>标签 |  SanJin Li</title>
+      <title>类加载 |  SanJin Li</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -56,13 +56,236 @@
       
     <main class="content on">
       <section class="outer">
+  <article
+  id="config.default_layout-类加载"
+  class="article article-type-config.default_layout"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  类加载
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/18/%E7%B1%BB%E5%8A%A0%E8%BD%BD/" class="article-date">
+  <time datetime="2021-12-18T11:14:05.000Z" itemprop="datePublished">2021-12-18</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JVM%E8%99%9A%E6%8B%9F%E6%9C%BA/">JVM虚拟机</a>
+  </div>
   
-    <h1 class="page-type-title">Tags</h1>
-    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Centos/" rel="tag">Centos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JUC/" rel="tag">JUC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/" rel="tag">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" rel="tag">垃圾回收</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%B6%E5%8F%91/" rel="tag">并发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li></ul>
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">576</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">2 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
   
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="java运行时的整体架构"><a href="#java运行时的整体架构" class="headerlink" title="java运行时的整体架构"></a>java运行时的整体架构</h1><p>  java通过latcher启动jvm后，通过类加载器加载类后，进入虚拟机，虚拟机内部的虚拟机栈通过本地库接口调用本地方法库，同时虚拟机内部的堆会进行JIT编译进行编译代码，GC会进行垃圾回收。</p>
+<h1 id="JVM加载类过程"><a href="#JVM加载类过程" class="headerlink" title="JVM加载类过程"></a>JVM加载类过程</h1><ul>
+<li>加载：<br>通过classLodaer将文件转化长成class字节码文件，然后生成出class对象</li>
+<li>连接：<ul>
+<li>校验：检查class文件的准确性和安全性。</li>
+<li>准备：准备为对象分布内存空间，并设置初始化值</li>
+<li>解析：将class文件中的符号引用修改为直接引用</li>
+</ul>
+</li>
+<li>初始化：<br>执行类变量赋值和静态代码块。</li>
+</ul>
+<h1 id="什么是classLoader？"><a href="#什么是classLoader？" class="headerlink" title="什么是classLoader？"></a>什么是classLoader？</h1><p>  classLoader是类加载器，主要是将数据中的二进制数据流装载入系统，然后交给虚拟机进行连接初始化等操作，是一个抽象类，包含三种加载器，分别是 BootstrapClassLoader 、 extClassLoader、 appClassLoader三个加载器</p>
+<ul>
+<li>bootstrapClassLoader ： 主要加载jre&#x2F;lib文件夹下的内容  主要是java核心库的东西，由c++编写的。</li>
+<li>extClassLoader： 主要加载的是jre&#x2F;lib&#x2F;ext文件夹下的内容  主要加载的是java扩展库 java编写。</li>
+<li>appClassLoader： 主要加载的是我们自己编写的程序代码</li>
+</ul>
+<h1 id="classLoader的双亲委派机制"><a href="#classLoader的双亲委派机制" class="headerlink" title="classLoader的双亲委派机制"></a>classLoader的双亲委派机制</h1><p>  当appClassLoader加载一个class的时候，他不会直接加载，而是把这个class交给他的上级，也就是extClassLoader去加载<br>  当extClassLoader加载一个class的时候，他也不回去直接加载，而是把这个class交个他的上级，也就是bootstrapClassLoader去加载<br>  当bootstrapClassLoader加载雷达时候，如果加载失败，它会让extClassLoader区加载，如果extClassLoader加载失败的话，会交给appClassLoader去加载<br>  如果appClassLoader没有加载成功的话，就会报 <strong>classNotFondException</strong> 错误<br>  这就是双亲委派机制，保证的程序的安全性。<br>  如果class是一个自定义的类 例如：Integer类，在bootstrapClassLoader加载的时候，会加载到JDK中&#x2F;jre&#x2F;lib目录下的Integer，而自定义的Integer类<br>  并不会被使用。</p>
+<h1 id="如何打破双亲委派机制"><a href="#如何打破双亲委派机制" class="headerlink" title="如何打破双亲委派机制"></a>如何打破双亲委派机制</h1><p>  自定义一个类加载器，即成classLoader类，重写findClass和loadClass</p>
+<h1 id="连接demo"><a href="#连接demo" class="headerlink" title="连接demo"></a>连接demo</h1><p>  网上找的demo，在这<a target="_blank" rel="noopener" href="https://gitee.com/lxinch/demo-list.git">jvm-sqwpjz</a></p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/12/18/%E7%B1%BB%E5%8A%A0%E8%BD%BD/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2021/12/20/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            垃圾回收
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2021/12/18/JVM%E5%9F%BA%E7%A1%80/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">JVM基础</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
 </section>
-
-
       <footer class="footer">
   <div class="outer">
     <ul>
@@ -202,6 +425,22 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link
