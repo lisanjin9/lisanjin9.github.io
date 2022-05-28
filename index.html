@@ -173,6 +173,19 @@
     <div class="article-entry" itemprop="articleBody">
        
   <h1 id="centos7-通过docker-安装-mysql"><a href="#centos7-通过docker-安装-mysql" class="headerlink" title="centos7 通过docker 安装 mysql"></a>centos7 通过docker 安装 mysql</h1><h2 id="1、通过docker查询mysql镜像：docker-search-mysql-如图："><a href="#1、通过docker查询mysql镜像：docker-search-mysql-如图：" class="headerlink" title="1、通过docker查询mysql镜像：docker search mysql 如图："></a>1、通过docker查询mysql镜像：docker search mysql 如图：</h2><p><img src="/images/docker-search-mysql.png" alt="docker查询mysql镜像"></p>
+<h2 id="2、下载自己想要的版本，我下载的是5-7的-如图："><a href="#2、下载自己想要的版本，我下载的是5-7的-如图：" class="headerlink" title="2、下载自己想要的版本，我下载的是5.7的 如图："></a>2、下载自己想要的版本，我下载的是5.7的 如图：</h2><p><img src="/images/download-mysql5.7.png" alt="下载mysql5.7版本"></p>
+<h2 id="3、查看下载是否成功-执行docker-images-如图："><a href="#3、查看下载是否成功-执行docker-images-如图：" class="headerlink" title="3、查看下载是否成功 执行docker images 如图："></a>3、查看下载是否成功 执行docker images 如图：</h2><p><img src="/images/search-bydocker-images.png" alt="查看mysql是否下载成功"></p>
+<h2 id="4、创建并启动容器："><a href="#4、创建并启动容器：" class="headerlink" title="4、创建并启动容器："></a>4、创建并启动容器：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 3306:3306 --name mysql \</span><br><span class="line">  -v /lisanjin9/mysql/conf:/etc/mysql/ \</span><br><span class="line">  -v /lisanjin9/mysql/log:/var/log/mysql \</span><br><span class="line">  -v /lisanjin9/mysql/data:/var/lib/mysql \</span><br><span class="line">  -e MYSQL_ROOT_PASSWORD=root \</span><br><span class="line">  -d mysql:5.7</span><br></pre></td></tr></table></figure>
+<p>-p 3306:3306 :将容器的3306端口映射到主机的3306端口<br>–name mysql： 容器别名<br>-v &#x2F;lisanjin9&#x2F;mysql&#x2F;conf:&#x2F;etc&#x2F;mysql&#x2F; \ ：将配置文件夹挂载到主机<br>-v &#x2F;lisanjin9&#x2F;mysql&#x2F;log:&#x2F;var&#x2F;log&#x2F;mysql \ ：将日志文件夹挂载到主机<br>-v &#x2F;lisanjin9&#x2F;mysql&#x2F;data:&#x2F;var&#x2F;lib&#x2F;mysql \ ：将配置文件夹挂载到主机<br>-e MYSQL_ROOT_PASSWORD&#x3D;root \ ：初始化root用户的密码<br>-d mysql:5.7以后台方式启动，以mysql:5.7镜像启动<br><strong>此处的挂在是在根目录下(&#x2F;)创建的文件夹 lisanjin9</strong></p>
+<h2 id="4、查看docker正在运行的镜像：docker-ps-如图"><a href="#4、查看docker正在运行的镜像：docker-ps-如图" class="headerlink" title="4、查看docker正在运行的镜像：docker ps 如图 :"></a>4、查看docker正在运行的镜像：docker ps 如图 :</h2><p><img src="/images/docker-ps-mysql.png" alt="查看docker是否运行mysql镜像"></p>
+<h2 id="5、使用命令-docker-exec-it-mysql-x2F-bin-x2F-bash-进入容器内部："><a href="#5、使用命令-docker-exec-it-mysql-x2F-bin-x2F-bash-进入容器内部：" class="headerlink" title="5、使用命令 docker exec -it mysql &#x2F;bin&#x2F;bash 进入容器内部："></a>5、使用命令 docker exec -it mysql &#x2F;bin&#x2F;bash 进入容器内部：</h2><p><img src="/images/join-mysql.png" alt="进入mysql内部"></p>
+<h2 id="6、使用命令-mysql-uroot-p-登录mysql"><a href="#6、使用命令-mysql-uroot-p-登录mysql" class="headerlink" title="6、使用命令 mysql -uroot -p 登录mysql"></a>6、使用命令 mysql -uroot -p 登录mysql</h2><p><img src="/images/docker-login.png" alt="登录mysql"></p>
+<h2 id="7、设置mysql跟随docker重启，自动启动-：-docker-update-mysql-–restart-x3D-always"><a href="#7、设置mysql跟随docker重启，自动启动-：-docker-update-mysql-–restart-x3D-always" class="headerlink" title="7、设置mysql跟随docker重启，自动启动 ： docker update mysql –restart&#x3D;always"></a>7、设置mysql跟随docker重启，自动启动 ： docker update mysql –restart&#x3D;always</h2><p><img src="/images/mysql-restart-always.png" alt="mysql自动启动"></p>
+<ul>
+<li>通过docker启动mysql ：docker start mysql</li>
+<li>通过docker停止mysql ：docker stop mysql</li>
+<li>通过docker重启mysql ：docker restart mysql</li>
+</ul>
  
       <!-- reward -->
       
