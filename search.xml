@@ -20,8 +20,8 @@
 <h3 id="6-解析域名"><a href="#6-解析域名" class="headerlink" title="6. 解析域名"></a>6. 解析域名</h3><p> 打开域名控制台，点击后边的解析<br> <img src="/../imgList/updateym.png" alt="alt text"></p>
 ]]></content>
       <categories>
-        <category>hexo +GitHub</category>
-        <category>搭建博客配置域名</category>
+        <category>博客</category>
+        <category>搭建个人博客</category>
       </categories>
       <tags>
         <tag>GitHub</tag>
@@ -104,7 +104,8 @@
 <h2 id="5-编译后就能出现结果了"><a href="#5-编译后就能出现结果了" class="headerlink" title="5. 编译后就能出现结果了"></a>5. 编译后就能出现结果了</h2><p><img src="/../imgList/MBTI-4.png" alt="出现结果"></p>
 ]]></content>
       <categories>
-        <category>小程序 - MBTI小程序</category>
+        <category>小程序</category>
+        <category>MBTI小程序</category>
       </categories>
       <tags>
         <tag>taro</tag>
@@ -125,8 +126,8 @@
 <h2 id="第四步-编写文章并提交到GitHub"><a href="#第四步-编写文章并提交到GitHub" class="headerlink" title="第四步 编写文章并提交到GitHub"></a>第四步 编写文章并提交到GitHub</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new &#123;文章名称&#125;</span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
 <h2 id="第五步-访问GitHub的路径查看能否显示"><a href="#第五步-访问GitHub的路径查看能否显示" class="headerlink" title="第五步 访问GitHub的路径查看能否显示"></a>第五步 访问GitHub的路径查看能否显示</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">用户名.github.io</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>hexo +GitHub</category>
-        <category>搭建博客</category>
+        <category>博客</category>
+        <category>搭建个人博客</category>
       </categories>
       <tags>
         <tag>GitHub</tag>
