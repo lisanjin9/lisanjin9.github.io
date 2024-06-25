@@ -48,9 +48,7 @@
 <h2 id="3-展示结果"><a href="#3-展示结果" class="headerlink" title="3. 展示结果"></a>3. 展示结果</h2><p><img src="/../video/MBTI%E5%B0%8F%E7%A8%8B%E5%BA%8Fmini%E7%89%88(2).mp4" alt="点击查看视频"></p>
 ]]></content>
       <categories>
-        <category>小程序</category>
-        <category>MBTI小程序</category>
-        <category>Java初学小程序编写MBTI项目mini版-2</category>
+        <category>小程序 - MBTI小程序</category>
       </categories>
       <tags>
         <tag>taro</tag>
@@ -74,9 +72,7 @@
 <h1 id="编写MBTI小程序第三版-通过CodeGeeX实现结果解析算法进行用户选择的结果进行解析"><a href="#编写MBTI小程序第三版-通过CodeGeeX实现结果解析算法进行用户选择的结果进行解析" class="headerlink" title="编写MBTI小程序第三版(通过CodeGeeX实现结果解析算法进行用户选择的结果进行解析)"></a>编写MBTI小程序第三版(通过CodeGeeX实现结果解析算法进行用户选择的结果进行解析)</h1><p> <a href="https://github.com/lisanjin9/MBTI-test-mini">源代码在这里嗷 ✈</a></p>
 <h2 id="通过-Taro-主要组件来实现"><a href="#通过-Taro-主要组件来实现" class="headerlink" title="通过 Taro 主要组件来实现"></a>通过 Taro 主要组件来实现</h2> <figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Taro</span>.<span class="title function_">setStorageSync</span>(<span class="string">&quot;answerList&quot;</span>, answerList);  <span class="comment">// 通过setStorageSync 来实现数据存储</span></span><br><span class="line"> <span class="comment">//获取答案</span></span><br><span class="line">  <span class="keyword">const</span> answerList = <span class="title class_">Taro</span>.<span class="title function_">getStorageSync</span>(<span class="string">&quot;answerList&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加点击事件，点击后 通过navigateTo来实现页面跳转</span></span><br><span class="line">onClick=&#123;<span class="function">() =&gt;</span> &#123;</span><br><span class="line">          <span class="title class_">Taro</span>.<span class="title function_">navigateTo</span>(&#123;</span><br><span class="line">            <span class="attr">url</span>: <span class="string">&quot;/pages/doQuestion/index&quot;</span>,</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加点击事件，点击后 通过reLaunch来实现清楚过多的没用页面</span></span><br><span class="line">onClick=&#123;<span class="function">() =&gt;</span> &#123;</span><br><span class="line">          <span class="title class_">Taro</span>.<span class="title function_">reLaunch</span>(&#123;</span><br><span class="line">            <span class="attr">url</span>: <span class="string">&quot;/pages/index/index&quot;</span>,</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;&#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 如果答案为空提示异常</span></span><br><span class="line">  <span class="keyword">if</span> (!answerList || answerList.<span class="property">length</span> &lt; <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="title class_">Taro</span>.<span class="title function_">showToast</span>(&#123;</span><br><span class="line">      <span class="attr">title</span>: <span class="string">&quot;答案为空&quot;</span>,</span><br><span class="line">      <span class="attr">icon</span>: <span class="string">&quot;error&quot;</span>,</span><br><span class="line">      <span class="attr">duration</span>: <span class="number">3000</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>小程序</category>
-        <category>MBTI小程序</category>
-        <category>ava初学小程序编写MBTI项目mini版-3(完结版)</category>
+        <category>小程序 - MBTI小程序</category>
       </categories>
       <tags>
         <tag>taro</tag>
@@ -106,9 +102,7 @@
 <h2 id="5-编译后就能出现结果了"><a href="#5-编译后就能出现结果了" class="headerlink" title="5. 编译后就能出现结果了"></a>5. 编译后就能出现结果了</h2><p><img src="/../imgList/MBTI-4.png" alt="出现结果"></p>
 ]]></content>
       <categories>
-        <category>小程序</category>
-        <category>MBTI小程序</category>
-        <category>Java初学小程序编写MBTI项目mini版-1</category>
+        <category>小程序 - MBTI小程序</category>
       </categories>
       <tags>
         <tag>taro</tag>
