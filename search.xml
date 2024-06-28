@@ -181,4 +181,31 @@
         <tag>函数</tag>
       </tags>
   </entry>
+  <entry>
+    <title>模板整合knife4j</title>
+    <url>/2024/06/28/%E6%A8%A1%E6%9D%BF%E6%95%B4%E5%90%88knife4j/</url>
+    <content><![CDATA[<!-- 
+    title: 文章标题
+    date: 文章创建时间
+    update: 文章修改时间
+    tags: 标签
+    categories： 分类  后端：back-end   前端：front-end  其余：outher-end
+    keywords: 文章关键字
+ -->
+
+<h1 id="整合后端模板最终效果"><a href="#整合后端模板最终效果" class="headerlink" title="整合后端模板最终效果"></a>整合后端模板最终效果</h1><p><img src="/../imgList/springboot-init-1.png" alt="整合后端模板结果图"></p>
+<h1 id="1-引入依赖"><a href="#1-引入依赖" class="headerlink" title="1. 引入依赖"></a>1. 引入依赖</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;com.github.xiaoymin&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;knife4j-openapi2-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;4.4.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="2-添加yml配置文件"><a href="#2-添加yml配置文件" class="headerlink" title="2. 添加yml配置文件"></a>2. 添加yml配置文件</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 接口文档配置</span><br><span class="line">knife4j:</span><br><span class="line">  enable: true</span><br><span class="line">  openapi:</span><br><span class="line">    title: &quot;金答评判系统&quot;</span><br><span class="line">    version: 1.0</span><br><span class="line">    group:</span><br><span class="line">      default:</span><br><span class="line">        api-rule: package</span><br><span class="line">        api-rule-resources:</span><br><span class="line">          - com.sanjin.controller   ## 对应controller目录</span><br></pre></td></tr></table></figure>
+<h2 id="这样纠正和完成了，直接打开网址：-http-localhost-8080-doc-html-就能看到了"><a href="#这样纠正和完成了，直接打开网址：-http-localhost-8080-doc-html-就能看到了" class="headerlink" title="这样纠正和完成了，直接打开网址： http://localhost:8080/doc.html 就能看到了"></a>这样纠正和完成了，直接打开网址： <a href="http://localhost:8080/doc.html">http://localhost:8080/doc.html</a> 就能看到了</h2><h1 id="3-网上都说还要配置java文件，-其实不需要那么麻烦，直接按照knife4j官网配置就行"><a href="#3-网上都说还要配置java文件，-其实不需要那么麻烦，直接按照knife4j官网配置就行" class="headerlink" title="3. 网上都说还要配置java文件， 其实不需要那么麻烦，直接按照knife4j官网配置就行"></a>3. 网上都说还要配置java文件， 其实不需要那么麻烦，直接按照knife4j官网配置就行</h1><p><a href="https://doc.xiaominfo.com/docs/quick-start">官网传送门✈</a></p>
+]]></content>
+      <categories>
+        <category>后端</category>
+        <category>后端模板</category>
+        <category>模板整合knife4j</category>
+      </categories>
+      <tags>
+        <tag>后端</tag>
+        <tag>后端模板</tag>
+      </tags>
+  </entry>
 </search>
