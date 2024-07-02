@@ -152,7 +152,6 @@
       <categories>
         <category>后端</category>
         <category>后端模板</category>
-        <category>初始化后端模板</category>
       </categories>
       <tags>
         <tag>后端</tag>
@@ -200,7 +199,6 @@
       <categories>
         <category>后端</category>
         <category>后端模板</category>
-        <category>模板整合knife4j</category>
       </categories>
       <tags>
         <tag>后端</tag>
@@ -229,6 +227,43 @@
       </categories>
       <tags>
         <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>设计模式</title>
+    <url>/2024/07/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<!-- 
+    title: 文章标题
+    date: 文章创建时间
+    update: 文章修改时间
+    tags: 标签
+    categories： 分类  后端：back-end   前端：front-end  其余：outher-end
+    keywords: 文章关键字
+ -->
+
+<h1 id="1-策略模式"><a href="#1-策略模式" class="headerlink" title="1.  策略模式"></a>1.  策略模式</h1><h3 id="1-第一步-定义一个接口"><a href="#1-第一步-定义一个接口" class="headerlink" title="1. 第一步 定义一个接口"></a>1. 第一步 定义一个接口</h3> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Strategy</span> &#123;</span><br><span class="line">    String <span class="title function_">doScore</span><span class="params">(List&lt;Integer&gt; list)</span> <span class="keyword">throws</span> Exception;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="2-第二部定义一个注释类型"><a href="#2-第二部定义一个注释类型" class="headerlink" title="2. 第二部定义一个注释类型"></a>2. 第二部定义一个注释类型</h3><ul>
+<li>通过@Target标签来定义作用范围，其参考值见类的定义：java.lang.annotation.ElementType</li>
+<li>通过@Retention标签来定义生命周期，其参考值见类的定义：java.lang.annotation.RetentionPolicy</li>
+<li>通过@Component标签，将其注入到Bean中，方便使用 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Target(ElementType.TYPE)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> StrategyConfig &#123;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="title function_">appType</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="title function_">strategy</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="3-编写相对应的策略"><a href="#3-编写相对应的策略" class="headerlink" title="3. 编写相对应的策略"></a>3. 编写相对应的策略</h3><ul>
+<li>我这里写了两个策略。 具体调用那个策略是通过 @StrategyConfig(appType &#x3D; 1, strategy &#x3D; 1) 来决定的<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@StrategyConfig(appType = 1, strategy = 1)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StrategyDemo01</span> <span class="keyword">implements</span> <span class="title class_">Strategy</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">doScore</span><span class="params">(List list)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;执行策略01&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@StrategyConfig(appType = 0, strategy = 1)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StrategyDemo02</span> <span class="keyword">implements</span> <span class="title class_">Strategy</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">doScore</span><span class="params">(List list)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;执行策略02&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="4-编写执行器"><a href="#4-编写执行器" class="headerlink" title="4. 编写执行器"></a>4. 编写执行器</h3><ul>
+<li>通过@Resource注解来获取到所有的策略，因为两个策略模式都添加了@StrategyConfig 注解，又因为StrategyConfig注入到Bean中了，所以能获取到</li>
+<li>循环策略， 通过<strong>isAnnotationPresent</strong>来检查strategy是否拥有StrategyConfig注解</li>
+<li>StrategyConfig是一个注解类型，所以通过<strong>getAnnotation</strong>这行代码获取strategy对象上StrategyConfig注解的实例</li>
+<li>依次判断appType参数是否与注解中的参数一致，一致的话则调用该策略<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StrategyExecutor</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;Strategy&gt; strategyList;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">doScore</span><span class="params">(List&lt;Integer&gt; list)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="keyword">for</span> (Strategy strategy : strategyList) &#123;</span><br><span class="line">            <span class="keyword">if</span> (strategy.getClass().isAnnotationPresent(StrategyConfig.class))&#123;</span><br><span class="line">                <span class="type">StrategyConfig</span> <span class="variable">annotation</span> <span class="operator">=</span> strategy.getClass().getAnnotation(StrategyConfig.class);</span><br><span class="line">                  <span class="keyword">if</span> (annotation.appType() == list.get(<span class="number">0</span>))&#123;</span><br><span class="line">                    <span class="keyword">return</span> strategy.doScore(list);</span><br><span class="line">                  &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Exception</span>(<span class="string">&quot;no strategy support&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p><a href="../../../WorkSpace/backend-init/sanjin-backend-init/src/main/java/com/sanjin/celuemoshi">源代码在这里✈ </a></p>
+]]></content>
+      <categories>
+        <category>后端</category>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
       </tags>
   </entry>
 </search>
