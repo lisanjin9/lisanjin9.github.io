@@ -230,8 +230,8 @@
       </tags>
   </entry>
   <entry>
-    <title>设计模式</title>
-    <url>/2024/07/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
+    <title>策略模式</title>
+    <url>/2024/07/02/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<!-- 
     title: 文章标题
     date: 文章创建时间
@@ -256,7 +256,7 @@
 <li>StrategyConfig是一个注解类型，所以通过<strong>getAnnotation</strong>这行代码获取strategy对象上StrategyConfig注解的实例</li>
 <li>依次判断appType参数是否与注解中的参数一致，一致的话则调用该策略<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StrategyExecutor</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;Strategy&gt; strategyList;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">doScore</span><span class="params">(List&lt;Integer&gt; list)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="keyword">for</span> (Strategy strategy : strategyList) &#123;</span><br><span class="line">            <span class="keyword">if</span> (strategy.getClass().isAnnotationPresent(StrategyConfig.class))&#123;</span><br><span class="line">                <span class="type">StrategyConfig</span> <span class="variable">annotation</span> <span class="operator">=</span> strategy.getClass().getAnnotation(StrategyConfig.class);</span><br><span class="line">                  <span class="keyword">if</span> (annotation.appType() == list.get(<span class="number">0</span>))&#123;</span><br><span class="line">                    <span class="keyword">return</span> strategy.doScore(list);</span><br><span class="line">                  &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Exception</span>(<span class="string">&quot;no strategy support&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p><a href="../../../WorkSpace/backend-init/sanjin-backend-init/src/main/java/com/sanjin/celuemoshi">源代码在这里✈ </a></p>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p><a href="https://github.com/lisanjin9/sanjin-backend-init/tree/master/src/main/java/com/sanjin/celuemoshi">源代码在这里✈ </a></p>
 ]]></content>
       <categories>
         <category>后端</category>
