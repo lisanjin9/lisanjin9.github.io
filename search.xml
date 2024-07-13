@@ -1,36 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>GitHub搭建的博客配置域名</title>
-    <url>/2024/06/16/GitHub%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/</url>
-    <content><![CDATA[<!-- 
-    title: 文章标题
-    date: 文章创建时间
-    update: 文章修改时间
-    tags: 标签
-    categories： 分类  后端：back-end   前端：front-end  其余：outher-end
-    keywords: 文章关键字
- -->
-<h2 id="上篇文章已经能够正常访问自己的博客了"><a href="#上篇文章已经能够正常访问自己的博客了" class="headerlink" title="上篇文章已经能够正常访问自己的博客了"></a>上篇文章已经能够正常访问自己的博客了</h2><p> <strong><a href="https://lisanjin9.github.io/2024/06/13/hexo+GitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">hexo+GitHub搭建个人博客</a></strong> </p>
-<h2 id="本篇文章来配置博客域名"><a href="#本篇文章来配置博客域名" class="headerlink" title="本篇文章来配置博客域名"></a>本篇文章来配置博客域名</h2><h3 id="1-申请域名"><a href="#1-申请域名" class="headerlink" title="1. 申请域名"></a>1. 申请域名</h3><p> 我已经申请域名，在腾讯云 <strong>lisanjin9.top</strong> 后缀无所谓， top是激励自己积极向上<br> <img src="/../imgList/yuming.png" alt="alt text"></p>
-<h3 id="2-在source目录下创建CNAME文件"><a href="#2-在source目录下创建CNAME文件" class="headerlink" title="2. 在source目录下创建CNAME文件"></a>2. 在source目录下创建CNAME文件</h3><p> <img src="/../imgList/CNAME.png" alt="alt text"></p>
-<h3 id="3-在根目录文件夹下寻找-config-yml-文件，修改文件里边的url路径"><a href="#3-在根目录文件夹下寻找-config-yml-文件，修改文件里边的url路径" class="headerlink" title="3. 在根目录文件夹下寻找**_config.yml**文件，修改文件里边的url路径"></a>3. 在根目录文件夹下寻找**_config.yml**文件，修改文件里边的url路径</h3><p> <img src="/../imgList/upURL.png" alt="alt text"></p>
-<h3 id="4-修改GitHub上的配置，打开博客仓库，点击settings"><a href="#4-修改GitHub上的配置，打开博客仓库，点击settings" class="headerlink" title="4. 修改GitHub上的配置，打开博客仓库，点击settings"></a>4. 修改GitHub上的配置，打开博客仓库，点击settings</h3><p> <img src="/../imgList/updateSettings.png" alt="alt text"></p>
-<h3 id="5-点击save，显示下图则配置成功"><a href="#5-点击save，显示下图则配置成功" class="headerlink" title="5. 点击save，显示下图则配置成功"></a>5. 点击<strong>save</strong>，显示下图则配置成功</h3><p> <img src="/../imgList/showDNS.png" alt="alt text"></p>
-<h3 id="6-解析域名"><a href="#6-解析域名" class="headerlink" title="6. 解析域名"></a>6. 解析域名</h3><p> 打开域名控制台，点击后边的解析<br> <img src="/../imgList/updateym.png" alt="alt text"></p>
-]]></content>
-      <categories>
-        <category>博客</category>
-        <category>搭建个人博客</category>
-      </categories>
-      <tags>
-        <tag>GitHub</tag>
-        <tag>域名</tag>
-        <tag>hexo</tag>
-        <tag>Md语法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java初学小程序编写MBTI项目mini版-2</title>
     <url>/2024/06/19/Java%E5%88%9D%E5%AD%A6%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%BC%96%E5%86%99MBTI%E9%A1%B9%E7%9B%AEmini%E7%89%88-2/</url>
     <content><![CDATA[<!-- 
@@ -84,6 +54,36 @@
       </tags>
   </entry>
   <entry>
+    <title>GitHub搭建的博客配置域名</title>
+    <url>/2024/06/16/GitHub%E6%90%AD%E5%BB%BA%E7%9A%84%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D/</url>
+    <content><![CDATA[<!-- 
+    title: 文章标题
+    date: 文章创建时间
+    update: 文章修改时间
+    tags: 标签
+    categories： 分类  后端：back-end   前端：front-end  其余：outher-end
+    keywords: 文章关键字
+ -->
+<h2 id="上篇文章已经能够正常访问自己的博客了"><a href="#上篇文章已经能够正常访问自己的博客了" class="headerlink" title="上篇文章已经能够正常访问自己的博客了"></a>上篇文章已经能够正常访问自己的博客了</h2><p> <strong><a href="https://lisanjin9.github.io/2024/06/13/hexo+GitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">hexo+GitHub搭建个人博客</a></strong> </p>
+<h2 id="本篇文章来配置博客域名"><a href="#本篇文章来配置博客域名" class="headerlink" title="本篇文章来配置博客域名"></a>本篇文章来配置博客域名</h2><h3 id="1-申请域名"><a href="#1-申请域名" class="headerlink" title="1. 申请域名"></a>1. 申请域名</h3><p> 我已经申请域名，在腾讯云 <strong>lisanjin9.top</strong> 后缀无所谓， top是激励自己积极向上<br> <img src="/../imgList/yuming.png" alt="alt text"></p>
+<h3 id="2-在source目录下创建CNAME文件"><a href="#2-在source目录下创建CNAME文件" class="headerlink" title="2. 在source目录下创建CNAME文件"></a>2. 在source目录下创建CNAME文件</h3><p> <img src="/../imgList/CNAME.png" alt="alt text"></p>
+<h3 id="3-在根目录文件夹下寻找-config-yml-文件，修改文件里边的url路径"><a href="#3-在根目录文件夹下寻找-config-yml-文件，修改文件里边的url路径" class="headerlink" title="3. 在根目录文件夹下寻找**_config.yml**文件，修改文件里边的url路径"></a>3. 在根目录文件夹下寻找**_config.yml**文件，修改文件里边的url路径</h3><p> <img src="/../imgList/upURL.png" alt="alt text"></p>
+<h3 id="4-修改GitHub上的配置，打开博客仓库，点击settings"><a href="#4-修改GitHub上的配置，打开博客仓库，点击settings" class="headerlink" title="4. 修改GitHub上的配置，打开博客仓库，点击settings"></a>4. 修改GitHub上的配置，打开博客仓库，点击settings</h3><p> <img src="/../imgList/updateSettings.png" alt="alt text"></p>
+<h3 id="5-点击save，显示下图则配置成功"><a href="#5-点击save，显示下图则配置成功" class="headerlink" title="5. 点击save，显示下图则配置成功"></a>5. 点击<strong>save</strong>，显示下图则配置成功</h3><p> <img src="/../imgList/showDNS.png" alt="alt text"></p>
+<h3 id="6-解析域名"><a href="#6-解析域名" class="headerlink" title="6. 解析域名"></a>6. 解析域名</h3><p> 打开域名控制台，点击后边的解析<br> <img src="/../imgList/updateym.png" alt="alt text"></p>
+]]></content>
+      <categories>
+        <category>博客</category>
+        <category>搭建个人博客</category>
+      </categories>
+      <tags>
+        <tag>GitHub</tag>
+        <tag>域名</tag>
+        <tag>hexo</tag>
+        <tag>Md语法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java初学小程序编写MBTI项目mini版-1</title>
     <url>/2024/06/18/Java%E5%88%9D%E5%AD%A6%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%BC%96%E5%86%99MBTI%E9%A1%B9%E7%9B%AEmini%E7%89%88/</url>
     <content><![CDATA[<!-- 
@@ -112,6 +112,30 @@
         <tag>taro ui</tag>
         <tag>ts</tag>
         <tag>小程序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java基础</title>
+    <url>/2024/06/29/Java%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<!-- 
+    title: 文章标题
+    date: 文章创建时间
+    update: 文章修改时间
+    tags: 标签
+    categories： 分类  后端：back-end   前端：front-end  其余：outher-end
+    keywords: 文章关键字
+ -->
+
+<h1 id="1-StringUtils中-isNotEmpty-和isNotBlank的区别"><a href="#1-StringUtils中-isNotEmpty-和isNotBlank的区别" class="headerlink" title="1. StringUtils中 isNotEmpty 和isNotBlank的区别"></a>1. StringUtils中 isNotEmpty 和isNotBlank的区别</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">总的来说是多了个空格的判断</span><br><span class="line">StringUtils.isNotEmpty(str)  ==    str!=<span class="literal">null</span> &amp;&amp; str.length &gt; <span class="number">0</span>;</span><br><span class="line">StringUtils.isNotBlank(str)  ==    str!=<span class="literal">null</span> &amp;&amp; str.length&gt;<span class="number">0</span> &amp;&amp; str.trim().length() &gt; <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">同理</span><br><span class="line">StringUtils.isEmpty(str)  ==    str==<span class="literal">null</span> || str.length == <span class="number">0</span>;</span><br><span class="line">StringUtils.isBlank(str)  ==    str==<span class="literal">null</span> || str.length == <span class="number">0</span> || str.trim().length() == <span class="number">0</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="2-queryWrapper的使用"><a href="#2-queryWrapper的使用" class="headerlink" title="2. queryWrapper的使用"></a>2. queryWrapper的使用</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> <span class="comment">// 需要拼接查询条件 , 同一个数据多列查询 </span></span><br><span class="line">       queryWrapper.and(qw -&gt; qw.like(<span class="string">&quot;title&quot;</span>, searchText).or().like(<span class="string">&quot;content&quot;</span>, searchText));</span><br><span class="line"><span class="comment">// 模糊查询</span></span><br><span class="line">        queryWrapper.like(StringUtils.isNotBlank(title), <span class="string">&quot;title&quot;</span>, title);</span><br><span class="line"><span class="comment">// 精确查询</span></span><br><span class="line">        【不等于】queryWrapper.ne(ObjectUtils.isNotEmpty(notId), <span class="string">&quot;id&quot;</span>, notId); </span><br><span class="line">        【等于】queryWrapper.eq(ObjectUtils.isNotEmpty(id), <span class="string">&quot;id&quot;</span>, id); </span><br><span class="line"><span class="comment">// gt、ge、lt、le</span></span><br><span class="line"></span><br><span class="line">       【大于】 queryWrapper.gt(<span class="string">&quot;last_name&quot;</span>, <span class="string">&quot;values&quot;</span>);       -&gt; 	sql 语句 where last_name &gt;<span class="string">&quot;values&quot;</span></span><br><span class="line">       【大于等于】 queryWrapper.ge(<span class="string">&quot;last_name&quot;</span>, <span class="string">&quot;values&quot;</span>);   -&gt; 	sql 语句 where last_name&gt;=<span class="string">&quot;values&quot;</span></span><br><span class="line">       【小于】 queryWrapper.lt(<span class="string">&quot;last_name&quot;</span>, <span class="string">&quot;values&quot;</span>);       -&gt;  	sql 语句 where last_name &lt;<span class="string">&quot;values&quot;</span></span><br><span class="line">       【小于等于】 queryWrapper.le(<span class="string">&quot;last_name&quot;</span>, <span class="string">&quot;values&quot;</span>);   -&gt;  	sql 语句 where last_name &lt;=<span class="string">&quot;values&quot;</span></span><br><span class="line"><span class="comment">// between、notBetween</span></span><br><span class="line">	   【在a与b之间】queryWrapper.between(<span class="string">&quot;last_name&quot;</span>,a,b) -&gt; sql 语句 where <span class="title function_">last_name</span> <span class="params">(between a and b)</span>;</span><br><span class="line">       【不在a与b之间】queryWrapper.notBetween(<span class="string">&quot;last_name&quot;</span>,a,b) -&gt; sql 语句 where <span class="title function_">last_name</span> <span class="params">(Not between a and b)</span>;</span><br><span class="line"><span class="comment">//like、notLike、likeLeft、likeRight</span></span><br><span class="line">		【字段值包含】queryWrapper.like(<span class="string">&quot;last_name&quot;</span>,<span class="string">&quot;v&quot;</span>) -&gt; sql 语句 where last_name  like %v%;</span><br><span class="line">		【字段值不包含】 queryWrapper.notlike(<span class="string">&quot;last_name&quot;</span>,<span class="string">&quot;v&quot;</span>) -&gt; sql 语句 where last_name  notlike %v%;</span><br><span class="line">		【字段值开头匹配】 queryWrapper.likeLeft(<span class="string">&quot;last_name&quot;</span>,<span class="string">&quot;v&quot;</span>) -&gt; sql 语句 where last_name  notlike %v;</span><br><span class="line">		【字段值结尾匹配】 queryWrapper.notlike(<span class="string">&quot;last_name&quot;</span>,<span class="string">&quot;v&quot;</span>) -&gt; sql 语句 where last_name  notlike  v%;</span><br><span class="line"></span><br><span class="line"><span class="comment">// isNull、isNotNull</span></span><br><span class="line">		【字段值为空的】 queryWrapper.isNull(<span class="string">&quot;last_name&quot;</span>) -&gt; sql 语句 where last_name  is <span class="literal">null</span>；</span><br><span class="line">		【字段值不为空的】 queryWrapper.isNotNull(<span class="string">&quot;last_name&quot;</span>) -&gt; sql 语句 where last_name  is not <span class="literal">null</span>；</span><br><span class="line"></span><br><span class="line"><span class="comment">// in、notIn</span></span><br><span class="line">		【字段值在区间内】  queryWrapper.in(<span class="string">&quot;last_name&quot;</span>,a,b,c) -&gt; sql 语句 where last_name <span class="title function_">in</span><span class="params">(a,b,c)</span>；</span><br><span class="line">		【字段值不在区间内】   queryWrapper.notin(<span class="string">&quot;last_name&quot;</span>,a,b,c) -&gt; sql 语句 where last_name not <span class="title function_">in</span><span class="params">(a,b,c)</span>；</span><br><span class="line"></span><br><span class="line"><span class="comment">//or、and</span></span><br><span class="line">		【多条件】  queryWrapper.notin(<span class="string">&quot;last_name&quot;</span>,a,b,c).or().eq(<span class="string">&quot;name&quot;</span>,<span class="string">&quot;aa&quot;</span>);-&gt; sql 语句 where last_name not <span class="title function_">in</span><span class="params">(a,b,c)</span> <span class="type">or</span> <span class="variable">name</span>  <span class="operator">=</span> <span class="string">&quot;aa&quot;</span>；</span><br><span class="line">queryWrapper.notin(<span class="string">&quot;last_name&quot;</span>,a,b,c).and().eq(<span class="string">&quot;name&quot;</span>,<span class="string">&quot;aa&quot;</span>);-&gt; sql 语句 where last_name not <span class="title function_">in</span><span class="params">(a,b,c)</span> <span class="type">and</span> <span class="variable">name</span>  <span class="operator">=</span> <span class="string">&quot;aa&quot;</span>；</span><br><span class="line"><span class="comment">// orderByAsc 、orderByDesc</span></span><br><span class="line">		【正序】 queryWrapper.orderByAsc(<span class="string">&quot;id&quot;</span>); -&gt; sql 语句   orderByAsc <span class="string">&quot;id&quot;</span> </span><br><span class="line">	    【倒序】 queryWrapper.orderByDesc(<span class="string">&quot;id&quot;</span>); -&gt; sql 语句   orderByDesc<span class="string">&quot;id&quot;</span></span><br></pre></td></tr></table></figure>
+<h1 id="3-获取对象中的int值，如果没有，则赋值为空"><a href="#3-获取对象中的int值，如果没有，则赋值为空" class="headerlink" title="3. 获取对象中的int值，如果没有，则赋值为空"></a>3. 获取对象中的int值，如果没有，则赋值为空</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">option为对象，score为对象中的一个参数</span><br><span class="line"><span class="type">int</span> <span class="variable">score</span> <span class="operator">=</span> Optional.of(option.getScore()).orElse(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>后端</category>
+        <category>Java基础</category>
+      </categories>
+      <tags>
+        <tag>Java基础</tag>
       </tags>
   </entry>
   <entry>
@@ -206,8 +230,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Java基础</title>
-    <url>/2024/06/29/Java%E5%9F%BA%E7%A1%80/</url>
+    <title>模板整合智谱AI</title>
+    <url>/2024/07/13/%E6%A8%A1%E6%9D%BF%E6%95%B4%E5%90%88%E6%99%BA%E8%B0%B1AI/</url>
     <content><![CDATA[<!-- 
     title: 文章标题
     date: 文章创建时间
@@ -216,17 +240,23 @@
     categories： 分类  后端：back-end   前端：front-end  其余：outher-end
     keywords: 文章关键字
  -->
-
-<h1 id="1-StringUtils中-isNotEmpty-和isNotBlank的区别"><a href="#1-StringUtils中-isNotEmpty-和isNotBlank的区别" class="headerlink" title="1. StringUtils中 isNotEmpty 和isNotBlank的区别"></a>1. StringUtils中 isNotEmpty 和isNotBlank的区别</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">总的来说是多了个空格的判断</span><br><span class="line">StringUtils.isNotEmpty(str)  ==    str!=<span class="literal">null</span> &amp;&amp; str.length &gt; <span class="number">0</span>;</span><br><span class="line">StringUtils.isNotBlank(str)  ==    str!=<span class="literal">null</span> &amp;&amp; str.length&gt;<span class="number">0</span> &amp;&amp; str.trim().length() &gt; <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">同理</span><br><span class="line">StringUtils.isEmpty(str)  ==    str==<span class="literal">null</span> || str.length == <span class="number">0</span>;</span><br><span class="line">StringUtils.isBlank(str)  ==    str==<span class="literal">null</span> || str.length == <span class="number">0</span> || str.trim().length() == <span class="number">0</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h1 id="2-queryWrapper的使用"><a href="#2-queryWrapper的使用" class="headerlink" title="2. queryWrapper的使用"></a>2. queryWrapper的使用</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> <span class="comment">// 需要拼接查询条件 , 同一个数据多列查询 </span></span><br><span class="line">       queryWrapper.and(qw -&gt; qw.like(<span class="string">&quot;title&quot;</span>, searchText).or().like(<span class="string">&quot;content&quot;</span>, searchText));</span><br><span class="line"><span class="comment">// 模糊查询</span></span><br><span class="line">        queryWrapper.like(StringUtils.isNotBlank(title), <span class="string">&quot;title&quot;</span>, title);</span><br><span class="line"><span class="comment">// 精确查询</span></span><br><span class="line">        【不等于】queryWrapper.ne(ObjectUtils.isNotEmpty(notId), <span class="string">&quot;id&quot;</span>, notId); </span><br><span class="line">        【等于】queryWrapper.eq(ObjectUtils.isNotEmpty(id), <span class="string">&quot;id&quot;</span>, id); </span><br><span class="line"><span class="comment">// gt、ge、lt、le</span></span><br><span class="line"></span><br><span class="line">       【大于】 queryWrapper.gt(<span class="string">&quot;last_name&quot;</span>, <span class="string">&quot;values&quot;</span>);       -&gt; 	sql 语句 where last_name &gt;<span class="string">&quot;values&quot;</span></span><br><span class="line">       【大于等于】 queryWrapper.ge(<span class="string">&quot;last_name&quot;</span>, <span class="string">&quot;values&quot;</span>);   -&gt; 	sql 语句 where last_name&gt;=<span class="string">&quot;values&quot;</span></span><br><span class="line">       【小于】 queryWrapper.lt(<span class="string">&quot;last_name&quot;</span>, <span class="string">&quot;values&quot;</span>);       -&gt;  	sql 语句 where last_name &lt;<span class="string">&quot;values&quot;</span></span><br><span class="line">       【小于等于】 queryWrapper.le(<span class="string">&quot;last_name&quot;</span>, <span class="string">&quot;values&quot;</span>);   -&gt;  	sql 语句 where last_name &lt;=<span class="string">&quot;values&quot;</span></span><br><span class="line"><span class="comment">// between、notBetween</span></span><br><span class="line">	   【在a与b之间】queryWrapper.between(<span class="string">&quot;last_name&quot;</span>,a,b) -&gt; sql 语句 where <span class="title function_">last_name</span> <span class="params">(between a and b)</span>;</span><br><span class="line">       【不在a与b之间】queryWrapper.notBetween(<span class="string">&quot;last_name&quot;</span>,a,b) -&gt; sql 语句 where <span class="title function_">last_name</span> <span class="params">(Not between a and b)</span>;</span><br><span class="line"><span class="comment">//like、notLike、likeLeft、likeRight</span></span><br><span class="line">		【字段值包含】queryWrapper.like(<span class="string">&quot;last_name&quot;</span>,<span class="string">&quot;v&quot;</span>) -&gt; sql 语句 where last_name  like %v%;</span><br><span class="line">		【字段值不包含】 queryWrapper.notlike(<span class="string">&quot;last_name&quot;</span>,<span class="string">&quot;v&quot;</span>) -&gt; sql 语句 where last_name  notlike %v%;</span><br><span class="line">		【字段值开头匹配】 queryWrapper.likeLeft(<span class="string">&quot;last_name&quot;</span>,<span class="string">&quot;v&quot;</span>) -&gt; sql 语句 where last_name  notlike %v;</span><br><span class="line">		【字段值结尾匹配】 queryWrapper.notlike(<span class="string">&quot;last_name&quot;</span>,<span class="string">&quot;v&quot;</span>) -&gt; sql 语句 where last_name  notlike  v%;</span><br><span class="line"></span><br><span class="line"><span class="comment">// isNull、isNotNull</span></span><br><span class="line">		【字段值为空的】 queryWrapper.isNull(<span class="string">&quot;last_name&quot;</span>) -&gt; sql 语句 where last_name  is <span class="literal">null</span>；</span><br><span class="line">		【字段值不为空的】 queryWrapper.isNotNull(<span class="string">&quot;last_name&quot;</span>) -&gt; sql 语句 where last_name  is not <span class="literal">null</span>；</span><br><span class="line"></span><br><span class="line"><span class="comment">// in、notIn</span></span><br><span class="line">		【字段值在区间内】  queryWrapper.in(<span class="string">&quot;last_name&quot;</span>,a,b,c) -&gt; sql 语句 where last_name <span class="title function_">in</span><span class="params">(a,b,c)</span>；</span><br><span class="line">		【字段值不在区间内】   queryWrapper.notin(<span class="string">&quot;last_name&quot;</span>,a,b,c) -&gt; sql 语句 where last_name not <span class="title function_">in</span><span class="params">(a,b,c)</span>；</span><br><span class="line"></span><br><span class="line"><span class="comment">//or、and</span></span><br><span class="line">		【多条件】  queryWrapper.notin(<span class="string">&quot;last_name&quot;</span>,a,b,c).or().eq(<span class="string">&quot;name&quot;</span>,<span class="string">&quot;aa&quot;</span>);-&gt; sql 语句 where last_name not <span class="title function_">in</span><span class="params">(a,b,c)</span> <span class="type">or</span> <span class="variable">name</span>  <span class="operator">=</span> <span class="string">&quot;aa&quot;</span>；</span><br><span class="line">queryWrapper.notin(<span class="string">&quot;last_name&quot;</span>,a,b,c).and().eq(<span class="string">&quot;name&quot;</span>,<span class="string">&quot;aa&quot;</span>);-&gt; sql 语句 where last_name not <span class="title function_">in</span><span class="params">(a,b,c)</span> <span class="type">and</span> <span class="variable">name</span>  <span class="operator">=</span> <span class="string">&quot;aa&quot;</span>；</span><br><span class="line"><span class="comment">// orderByAsc 、orderByDesc</span></span><br><span class="line">		【正序】 queryWrapper.orderByAsc(<span class="string">&quot;id&quot;</span>); -&gt; sql 语句   orderByAsc <span class="string">&quot;id&quot;</span> </span><br><span class="line">	    【倒序】 queryWrapper.orderByDesc(<span class="string">&quot;id&quot;</span>); -&gt; sql 语句   orderByDesc<span class="string">&quot;id&quot;</span></span><br></pre></td></tr></table></figure>
-<h1 id="3-获取对象中的int值，如果没有，则赋值为空"><a href="#3-获取对象中的int值，如果没有，则赋值为空" class="headerlink" title="3. 获取对象中的int值，如果没有，则赋值为空"></a>3. 获取对象中的int值，如果没有，则赋值为空</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">option为对象，score为对象中的一个参数</span><br><span class="line"><span class="type">int</span> <span class="variable">score</span> <span class="operator">=</span> Optional.of(option.getScore()).orElse(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>]]></content>
+<h1 id="易达系统中使用智谱AI流程"><a href="#易达系统中使用智谱AI流程" class="headerlink" title="易达系统中使用智谱AI流程"></a>易达系统中使用智谱AI流程</h1><h2 id="引入依赖"><a href="#引入依赖" class="headerlink" title="引入依赖"></a>引入依赖</h2> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;cn.bigmodel.openapi&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;oapi-java-sdk&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;release-V4-<span class="number">2.0</span><span class="number">.2</span>&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="yml文件中进行配置"><a href="#yml文件中进行配置" class="headerlink" title="yml文件中进行配置"></a>yml文件中进行配置</h2><ul>
+<li>首先打开<a href="https://maas.aminer.cn/dev/howuse/privacypolicy">智谱AI开放平台</a>注册账号<br> <img src="/zhipuAI.png" alt="智谱AI注册结束后"></li>
+<li>将图片中的API Key复制一下填写入下图的yml配置文件里 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># AI 配置</span></span><br><span class="line"><span class="attr">ai:</span></span><br><span class="line">  <span class="attr">appKey:</span> <span class="string">xxx</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="代码中的调用方式"><a href="#代码中的调用方式" class="headerlink" title="代码中的调用方式"></a>代码中的调用方式</h2><ul>
+<li>定义一个工具类 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;ai&quot;)</span>   <span class="comment">//通过该注解引入yml中配置的ai-appKey参数</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AiConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String appKey;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> ClientV4 <span class="title function_">getClientV4</span><span class="params">()</span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ClientV4</span>.Builder(appKey).build();  <span class="comment">// 将ClientV4注入到Bean中， 调用类就可以通过@Resource获取</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>代码调用需要按需传递参数，参考<a href="https://maas.aminer.cn/dev/api#glm-4v">这里</a> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">()</span> &#123;</span><br><span class="line">     <span class="comment">// 构建请求</span></span><br><span class="line">    <span class="type">ChatCompletionRequest</span> <span class="variable">chatCompletionRequest</span> <span class="operator">=</span> ChatCompletionRequest.builder()</span><br><span class="line">            .model(Constants.ModelChatGLM4)</span><br><span class="line">            .stream(stream)</span><br><span class="line">            .temperature(temperature)</span><br><span class="line">            .invokeMethod(Constants.invokeMethod)</span><br><span class="line">            .messages(messages)</span><br><span class="line">            .build();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="type">ModelApiResponse</span> <span class="variable">invokeModelApiResp</span> <span class="operator">=</span> clientV4.invokeModelApi(chatCompletionRequest);</span><br><span class="line">        <span class="keyword">return</span> invokeModelApiResp.getData().getChoices().get(<span class="number">0</span>).toString(); <span class="comment">// 该段返回的内容则为智谱AI生成的内容</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">BusinessException</span>(ErrorCode.SYSTEM_ERROR, e.getMessage());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
       <categories>
         <category>后端</category>
-        <category>Java基础</category>
+        <category>后端模板</category>
       </categories>
       <tags>
-        <tag>Java基础</tag>
+        <tag>后端</tag>
+        <tag>后端模板</tag>
       </tags>
   </entry>
   <entry>
@@ -264,36 +294,6 @@
       </categories>
       <tags>
         <tag>设计模式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>模板整合智谱AI</title>
-    <url>/2024/07/13/%E6%A8%A1%E6%9D%BF%E6%95%B4%E5%90%88%E6%99%BA%E8%B0%B1AI/</url>
-    <content><![CDATA[<!-- 
-    title: 文章标题
-    date: 文章创建时间
-    update: 文章修改时间
-    tags: 标签
-    categories： 分类  后端：back-end   前端：front-end  其余：outher-end
-    keywords: 文章关键字
- -->
-<h1 id="易达系统中使用智谱AI流程"><a href="#易达系统中使用智谱AI流程" class="headerlink" title="易达系统中使用智谱AI流程"></a>易达系统中使用智谱AI流程</h1><h2 id="引入依赖"><a href="#引入依赖" class="headerlink" title="引入依赖"></a>引入依赖</h2> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;cn.bigmodel.openapi&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;oapi-java-sdk&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;release-V4-<span class="number">2.0</span><span class="number">.2</span>&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="yml文件中进行配置"><a href="#yml文件中进行配置" class="headerlink" title="yml文件中进行配置"></a>yml文件中进行配置</h2><ul>
-<li>首先打开<a href="https://maas.aminer.cn/dev/howuse/privacypolicy">智谱AI开放平台</a>注册账号<br> <img src="/zhipuAI.png" alt="智谱AI注册结束后"></li>
-<li>将图片中的API Key复制一下填写入下图的yml配置文件里 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># AI 配置</span></span><br><span class="line"><span class="attr">ai:</span></span><br><span class="line">  <span class="attr">appKey:</span> <span class="string">xxx</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="代码中的调用方式"><a href="#代码中的调用方式" class="headerlink" title="代码中的调用方式"></a>代码中的调用方式</h2><ul>
-<li>定义一个工具类 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;ai&quot;)</span>   <span class="comment">//通过该注解引入yml中配置的ai-appKey参数</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AiConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String appKey;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> ClientV4 <span class="title function_">getClientV4</span><span class="params">()</span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ClientV4</span>.Builder(appKey).build();  <span class="comment">// 将ClientV4注入到Bean中， 调用类就可以通过@Resource获取</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>代码调用需要按需传递参数，参考<a href="https://maas.aminer.cn/dev/api#glm-4v">这里</a> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">()</span> &#123;</span><br><span class="line">     <span class="comment">// 构建请求</span></span><br><span class="line">    <span class="type">ChatCompletionRequest</span> <span class="variable">chatCompletionRequest</span> <span class="operator">=</span> ChatCompletionRequest.builder()</span><br><span class="line">            .model(Constants.ModelChatGLM4)</span><br><span class="line">            .stream(stream)</span><br><span class="line">            .temperature(temperature)</span><br><span class="line">            .invokeMethod(Constants.invokeMethod)</span><br><span class="line">            .messages(messages)</span><br><span class="line">            .build();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="type">ModelApiResponse</span> <span class="variable">invokeModelApiResp</span> <span class="operator">=</span> clientV4.invokeModelApi(chatCompletionRequest);</span><br><span class="line">        <span class="keyword">return</span> invokeModelApiResp.getData().getChoices().get(<span class="number">0</span>).toString(); <span class="comment">// 该段返回的内容则为智谱AI生成的内容</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">BusinessException</span>(ErrorCode.SYSTEM_ERROR, e.getMessage());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>后端</category>
-        <category>后端模板</category>
-      </categories>
-      <tags>
-        <tag>后端</tag>
-        <tag>后端模板</tag>
       </tags>
   </entry>
 </search>
