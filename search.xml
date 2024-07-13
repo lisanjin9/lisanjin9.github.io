@@ -242,7 +242,7 @@
  -->
 <h1 id="易达系统中使用智谱AI流程"><a href="#易达系统中使用智谱AI流程" class="headerlink" title="易达系统中使用智谱AI流程"></a>易达系统中使用智谱AI流程</h1><h2 id="引入依赖"><a href="#引入依赖" class="headerlink" title="引入依赖"></a>引入依赖</h2> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;cn.bigmodel.openapi&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;oapi-java-sdk&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;release-V4-<span class="number">2.0</span><span class="number">.2</span>&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="yml文件中进行配置"><a href="#yml文件中进行配置" class="headerlink" title="yml文件中进行配置"></a>yml文件中进行配置</h2><ul>
-<li>首先打开<a href="https://maas.aminer.cn/dev/howuse/privacypolicy">智谱AI开放平台</a>注册账号<br> <img src="/zhipuAI.png" alt="智谱AI注册结束后"></li>
+<li>首先打开<a href="https://maas.aminer.cn/dev/howuse/privacypolicy">智谱AI开放平台</a>注册账号<br> <img src="/../imgList/zhipuAI.png" alt="智谱AI注册结束后"></li>
 <li>将图片中的API Key复制一下填写入下图的yml配置文件里 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># AI 配置</span></span><br><span class="line"><span class="attr">ai:</span></span><br><span class="line">  <span class="attr">appKey:</span> <span class="string">xxx</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h2 id="代码中的调用方式"><a href="#代码中的调用方式" class="headerlink" title="代码中的调用方式"></a>代码中的调用方式</h2><ul>
