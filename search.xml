@@ -312,5 +312,11 @@
 <p><strong>出现此图则为安装成功</strong><br><img src="/../imgList/CentOS-01.png" alt="出现此图则为安装成功"></p>
 <h1 id="2-访问外网面板地址"><a href="#2-访问外网面板地址" class="headerlink" title="2. 访问外网面板地址"></a>2. 访问外网面板地址</h1><p><strong>需要将宝塔面板中的端口开放后才能访问</strong><br><img src="/../imgList/CentOS-02.png" alt="需要将宝塔面板中的端口开放后才能访问"><br><strong>访问成功如图</strong><br><img src="/../imgList/CentOS-03.png" alt="访问成功如图"><br><img src="/../imgList/CentOS-04.png" alt="访问成功如图"></p>
 <h1 id="3-下载mysql等"><a href="#3-下载mysql等" class="headerlink" title="3. 下载mysql等"></a>3. 下载mysql等</h1><h1 id="4-链接数据库导入数据"><a href="#4-链接数据库导入数据" class="headerlink" title="4. 链接数据库导入数据"></a>4. 链接数据库导入数据</h1>]]></content>
+      <categories>
+        <category>项目部署</category>
+      </categories>
+      <tags>
+        <tag>项目部署</tag>
+      </tags>
   </entry>
 </search>
