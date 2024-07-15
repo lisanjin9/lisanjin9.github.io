@@ -296,4 +296,21 @@
         <tag>设计模式</tag>
       </tags>
   </entry>
+  <entry>
+    <title>CentOS系统部署前后端分离项目</title>
+    <url>/2024/07/15/CentOS%E7%B3%BB%E7%BB%9F%E9%83%A8%E7%BD%B2%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<!-- 
+    title: 文章标题
+    date: 文章创建时间
+    update: 文章修改时间
+    tags: 标签
+    categories： 分类  后端：back-end   前端：front-end  其余：outher-end
+    keywords: 文章关键字
+ -->
+
+<h1 id="1-安装宝塔面板"><a href="#1-安装宝塔面板" class="headerlink" title="1. 安装宝塔面板"></a>1. 安装宝塔面板</h1> <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh https://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh ed8484bec</span><br></pre></td></tr></table></figure>
+<p><strong>出现此图则为安装成功</strong><br><img src="/../imgList/CentOS-01.png" alt="出现此图则为安装成功"></p>
+<h1 id="2-访问外网面板地址"><a href="#2-访问外网面板地址" class="headerlink" title="2. 访问外网面板地址"></a>2. 访问外网面板地址</h1><p><strong>需要将宝塔面板中的端口开放后才能访问</strong><br><img src="/../imgList/CentOS-02.png" alt="需要将宝塔面板中的端口开放后才能访问"><br><strong>访问成功如图</strong><br><img src="/../imgList/CentOS-03.png" alt="访问成功如图"><br><img src="/../imgList/CentOS-04.png" alt="访问成功如图"></p>
+]]></content>
+  </entry>
 </search>
