@@ -350,7 +350,7 @@
 <h1 id="4-启动docker"><a href="#4-启动docker" class="headerlink" title="4. 启动docker"></a>4. 启动docker</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl start docker  # 启动docker服务</span><br><span class="line"></span><br><span class="line">systemctl stop docker  # 停止docker服务</span><br><span class="line"></span><br><span class="line">systemctl restart docker  # 重启docker服务</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>项目部署</category>
-        <category>CentOS安装docker</category>
+        <category>docker安装应用</category>
       </categories>
       <tags>
         <tag>docker</tag>
@@ -365,7 +365,7 @@
 ]]></content>
       <categories>
         <category>项目部署</category>
-        <category>docker安装mysql</category>
+        <category>docker安装应用</category>
       </categories>
       <tags>
         <tag>docker</tag>
