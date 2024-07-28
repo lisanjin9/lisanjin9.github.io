@@ -342,6 +342,17 @@
 <p><img src="/../imgList/docker/docker-4.png" alt="提升yum安装速度"></p>
 <h1 id="4-安装docker"><a href="#4-安装docker" class="headerlink" title="4. 安装docker"></a>4. 安装docker</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin</span><br></pre></td></tr></table></figure>
 <p><img src="/../imgList/docker/docker-5.png" alt="安装成功"></p>
+<h1 id="5-关闭防火墙"><a href="#5-关闭防火墙" class="headerlink" title="5. 关闭防火墙"></a>5. 关闭防火墙</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl stop forewalld</span><br><span class="line"></span><br><span class="line">systemctl disable forewalld</span><br></pre></td></tr></table></figure>
+
+<h1 id="6-启动docker并且查看运行状态"><a href="#6-启动docker并且查看运行状态" class="headerlink" title="6.  启动docker并且查看运行状态"></a>6.  启动docker并且查看运行状态</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 查看docker状态</span><br><span class="line">systemctl status docker</span><br><span class="line"></span><br><span class="line"># 启动docker</span><br><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
+<p><img src="/../imgList/docker/docker-6.png" alt="启动docker"></p>
+<h1 id="7-设置docker开机启动"><a href="#7-设置docker开机启动" class="headerlink" title="7. 设置docker开机启动"></a>7. 设置docker开机启动</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">设置开机启动</span><br><span class="line">systemctl enable docker</span><br><span class="line"></span><br><span class="line">systemctl disable docker</span><br></pre></td></tr></table></figure>
+
+<h1 id="8-配置镜像"><a href="#8-配置镜像" class="headerlink" title="8. 配置镜像"></a>8. 配置镜像</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir -p /etc/docker</span><br><span class="line"></span><br><span class="line">tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://780urbjd.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line"># 检查配置</span><br><span class="line">cat /etc/docker/daemon.json</span><br></pre></td></tr></table></figure>
+
+<h1 id="9-重启docker"><a href="#9-重启docker" class="headerlink" title="9. 重启docker"></a>9. 重启docker</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line"></span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../imgList/docker/docker-7.png" alt="查看是否安装成功"></p>
 ]]></content>
       <categories>
         <category>项目部署</category>
