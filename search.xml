@@ -384,4 +384,26 @@
         <tag>mysql</tag>
       </tags>
   </entry>
+  <entry>
+    <title>docker安装JDK</title>
+    <url>/2024/07/29/docker%E5%AE%89%E8%A3%85JDK/</url>
+    <content><![CDATA[<h1 id="docker安装JDK"><a href="#docker安装JDK" class="headerlink" title="docker安装JDK"></a>docker安装JDK</h1><h2 id="1-查看docker镜像中的jdk"><a href="#1-查看docker镜像中的jdk" class="headerlink" title="1. 查看docker镜像中的jdk]"></a>1. 查看docker镜像中的jdk]</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum -y list java*</span><br></pre></td></tr></table></figure>
+<p><img src="/../imgList/JDK/JDK-1.png" alt="查看docker镜像中的jdk"></p>
+<h2 id="2-安装java8的所有程序包"><a href="#2-安装java8的所有程序包" class="headerlink" title="2. 安装java8的所有程序包"></a>2. 安装java8的所有程序包</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yum install java-1.8.0-openjdk*</span><br></pre></td></tr></table></figure>
+<p><img src="/../imgList/JDK/JDK-2.png" alt="安装成功"></p>
+<h2 id="3-查看安装情况"><a href="#3-查看安装情况" class="headerlink" title="3. 查看安装情况"></a>3. 查看安装情况</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
+<p><img src="/../imgList/JDK/JDK-3.png" alt="查看版本号"></p>
+<h2 id="4-配置环境变量"><a href="#4-配置环境变量" class="headerlink" title="4. 配置环境变量"></a>4. 配置环境变量</h2><p><strong>通过yum安装的的路径为 &#x2F;usr&#x2F;lib&#x2F;jvm</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 修改配置文件</span><br><span class="line">vi /etc/profile</span><br><span class="line"></span><br><span class="line"># 打开文件后 按i  然后按住↓ 拉到最底下 换到最新一行 将下边内容添加</span><br><span class="line">JAVA_HOME=/usr/lib/jvm/java</span><br><span class="line">PATH=$PATH:$JAVA_HOME/bin</span><br><span class="line">CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">export JAVA_HOME CLASSPATH PATH</span><br><span class="line"></span><br><span class="line"># 添加完后  按ESC见 然后按 :wq 回车</span><br><span class="line"></span><br><span class="line"># 检查看本好</span><br><span class="line">java -version</span><br><span class="line">javac -version</span><br></pre></td></tr></table></figure>
+<p><img src="/../imgList/JDK/JDK-4.png" alt="出现这种情况就表示安装成功"></p>
+]]></content>
+      <categories>
+        <category>项目部署</category>
+        <category>docker安装应用</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+        <tag>JDK</tag>
+      </tags>
+  </entry>
 </search>
