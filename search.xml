@@ -324,7 +324,7 @@
     <content><![CDATA[<h1 id="完整顺序"><a href="#完整顺序" class="headerlink" title="完整顺序"></a>完整顺序</h1><h2 id="1-CentOS安装docker"><a href="#1-CentOS安装docker" class="headerlink" title="1. CentOS安装docker"></a>1. CentOS安装docker</h2><p><strong><a href="https://lisanjin9.top/2024/07/27/CentOS%E5%AE%89%E8%A3%85docker/">CentOS安装docker</a></strong></p>
 <h2 id="2-docker安装mysql"><a href="#2-docker安装mysql" class="headerlink" title="2. docker安装mysql"></a>2. docker安装mysql</h2><p><strong><a href="https://lisanjin9.top/2024/07/27/docker%E5%AE%89%E8%A3%85mysql/">docker安装mysql</a></strong></p>
 <h2 id="3-安装好需要将服务器防火墙开通mysql端口"><a href="#3-安装好需要将服务器防火墙开通mysql端口" class="headerlink" title="3. 安装好需要将服务器防火墙开通mysql端口"></a>3. 安装好需要将服务器防火墙开通mysql端口</h2><p><strong>不开通端口应该连不上，上次宝塔面板里边那个安全没开通连不上</strong><br><img src="/../imgList/mysql/mysql-5.png" alt="开通端口"></p>
-<h2 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h2><h1 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h1>]]></content>
+<h2 id="4-使用Navicat链接上服务器数据库，将sql文件执行"><a href="#4-使用Navicat链接上服务器数据库，将sql文件执行" class="headerlink" title="4. 使用Navicat链接上服务器数据库，将sql文件执行"></a>4. 使用Navicat链接上服务器数据库，将sql文件执行</h2><h2 id="5-安装Nginx"><a href="#5-安装Nginx" class="headerlink" title="5. 安装Nginx"></a>5. 安装Nginx</h2><h1 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h1>]]></content>
       <categories>
         <category>项目部署</category>
         <category>CentOS+docker部署前后端分离新项目</category>
@@ -404,6 +404,50 @@
       <tags>
         <tag>docker</tag>
         <tag>JDK</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>docker安装Nginx</title>
+    <url>/2024/07/29/docker%E5%AE%89%E8%A3%85Nginx/</url>
+    <content><![CDATA[<h1 id="docker安装Nginx"><a href="#docker安装Nginx" class="headerlink" title="docker安装Nginx"></a>docker安装Nginx</h1><h2 id="1-拉去Nginx最新镜像"><a href="#1-拉去Nginx最新镜像" class="headerlink" title="1. 拉去Nginx最新镜像"></a>1. 拉去Nginx最新镜像</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker pull nginx</span><br></pre></td></tr></table></figure>
+<p><img src="/../imgList/Nginx/nginx-1.png" alt="拉取Nginx镜像"></p>
+<h2 id="2-设置Nginx端口为8880，查看是否被占用"><a href="#2-设置Nginx端口为8880，查看是否被占用" class="headerlink" title="2. 设置Nginx端口为8880，查看是否被占用"></a>2. 设置Nginx端口为8880，查看是否被占用</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --query-port=8880/tcp</span><br></pre></td></tr></table></figure>
+<p><img src="/../imgList/Nginx/nginx-3.png" alt="未被占用"></p>
+<h2 id="3-开始设置端口"><a href="#3-开始设置端口" class="headerlink" title="3. 开始设置端口"></a>3. 开始设置端口</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --add-port=8880/tcp --permanent</span><br></pre></td></tr></table></figure>
+<p><img src="/../imgList/Nginx/nginx-4.png" alt="添加端口"></p>
+<h2 id="4-重新载入防火墙"><a href="#4-重新载入防火墙" class="headerlink" title="4. 重新载入防火墙"></a>4. 重新载入防火墙</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-创建nginx容器"><a href="#5-创建nginx容器" class="headerlink" title="5. 创建nginx容器"></a>5. 创建nginx容器</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --name nginx -p 8880:80 nginx</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-创建挂在目录"><a href="#6-创建挂在目录" class="headerlink" title="6. 创建挂在目录"></a>6. 创建挂在目录</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir -p /data/nginx/&#123;conf,log,html&#125;</span><br><span class="line"></span><br><span class="line"># 将 nginx中的 nginx.conf 复制一份放入我们创建的目录中</span><br><span class="line">docker cp nginx:/etc/nginx/nginx.conf /data/nginx/conf/nginx.conf</span><br><span class="line"></span><br><span class="line"># 将 nginx中的 conf.d  复制一份放入我们创建的目录中</span><br><span class="line">docker cp nginx:/etc/nginx/conf.d  /data/nginx/conf/conf.d </span><br><span class="line"></span><br><span class="line"># 将nginx中的html文件复制过来</span><br><span class="line">docker cp nginx:/usr/share/nginx/html /data/nginx</span><br></pre></td></tr></table></figure>
+<p><img src="/../imgList/Nginx/nginx-8.png" alt="copy成功"></p>
+<h2 id="7-停止创建的nginx容器"><a href="#7-停止创建的nginx容器" class="headerlink" title="7. 停止创建的nginx容器"></a>7. 停止创建的nginx容器</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker ps  # 查询出nginxID</span><br><span class="line"></span><br><span class="line">docker stop nginxID</span><br><span class="line"></span><br><span class="line">docker ps -a # 查询全部</span><br><span class="line"></span><br><span class="line">docker rm nginxID</span><br></pre></td></tr></table></figure>
+<p><img src="/../imgList/Nginx/nginx-9.png" alt="关闭成功"></p>
+<h2 id="8-重新创建一个新的容器"><a href="#8-重新创建一个新的容器" class="headerlink" title="8. 重新创建一个新的容器"></a>8. 重新创建一个新的容器</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --name nginx -p 8880:80 \</span><br><span class="line">-v /data/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \</span><br><span class="line">-v /data/nginx/conf/conf.d:/etc/nginx/conf.d \</span><br><span class="line">-v /data/nginx/log:/var/log/nginx \</span><br><span class="line">-v /data/nginx/html:/usr/share/nginx/html \</span><br><span class="line">--privileged=true nginx</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h1 id="docker-运行nginx失败"><a href="#docker-运行nginx失败" class="headerlink" title="docker 运行nginx失败"></a>docker 运行nginx失败</h1><p><img src="/../imgList/Nginx/nginx-5.png" alt="失败图"></p>
+<h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><ol>
+<li>重启docker<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure></li>
+<li>删除旧容器 重新启动刚刚的容器<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker rm -f nginx</span><br><span class="line"></span><br><span class="line">docker run -d --name nginx -p 8880:80 nginx</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><img src="/../imgList/Nginx/nginx-6.png" alt="启动成功"></p>
+<p><img src="/../imgList/Nginx/nginx-7.png" alt="nginx启动成功"></p>
+]]></content>
+      <categories>
+        <category>项目部署</category>
+        <category>docker安装应用</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+        <tag>Nginx</tag>
       </tags>
   </entry>
 </search>
