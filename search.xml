@@ -451,4 +451,17 @@
         <tag>Nginx</tag>
       </tags>
   </entry>
+  <entry>
+    <title>docker安装docker-compose</title>
+    <url>/2024/07/31/docker%E5%AE%89%E8%A3%85docker-compose/</url>
+    <content><![CDATA[<h1 id="docker安装docker-compose"><a href="#docker安装docker-compose" class="headerlink" title="docker安装docker-compose"></a>docker安装docker-compose</h1><h2 id="依次执行一下命令"><a href="#依次执行一下命令" class="headerlink" title="依次执行一下命令"></a>依次执行一下命令</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 58.6M</span><br><span class="line">curl -L &quot;https://github.com/docker/compose/releases/download/v2.24.7/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line"># 给权限</span><br><span class="line">chmod +x /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line"># 查看结果</span><br><span class="line">docker-compose -v</span><br><span class="line"></span><br><span class="line"># 显示这个则下载成功</span><br><span class="line">Docker Compose version v2.24.7</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>项目部署</category>
+        <category>docker安装应用</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+        <tag>docker-compose</tag>
+      </tags>
+  </entry>
 </search>
