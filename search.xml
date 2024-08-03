@@ -375,6 +375,8 @@
 <p><img src="/../imgList/mysql/mysql-3.png" alt="下载成功"></p>
 <h2 id="3-运行镜像"><a href="#3-运行镜像" class="headerlink" title="3. 运行镜像"></a>3. 运行镜像</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -p 3306:3306 --name mysql57 -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7</span><br></pre></td></tr></table></figure>
 <p><img src="/../imgList/mysql/mysql-4.png" alt="启动成功"></p>
+<p>docker run -d –name mysql -v mysqldata:&#x2F;var&#x2F;lib&#x2F;mysql -v mysqlconf:&#x2F;etc&#x2F;mysql&#x2F;conf.d -v mysqllog:&#x2F;var&#x2F;log&#x2F;mysql -p 3306:3306 –network yidada -e MYSQL_ROOT_PASSWORD&#x3D;123456 mysql:5.8</p>
+<p>docker run -d -it –name yidada –network yidada -v &#x2F;usr&#x2F;local&#x2F;java:&#x2F;usr&#x2F;local&#x2F;java -p 8101:8101 yidada:1</p>
 ]]></content>
       <categories>
         <category>项目部署</category>
