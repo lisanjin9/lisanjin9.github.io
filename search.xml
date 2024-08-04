@@ -466,4 +466,27 @@
         <tag>docker-compose</tag>
       </tags>
   </entry>
+  <entry>
+    <title>docker学习</title>
+    <url>/2024/08/04/docker%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h2 id="1-什么是docker"><a href="#1-什么是docker" class="headerlink" title="1. 什么是docker"></a>1. 什么是docker</h2><p>docker简单来说就是<strong>加速、构建、分享、运行</strong>我们的应用<br>方便应用下载、运行应用  例如WeGame游戏客户端，可以直接在WeGame上下载自己想玩的游戏，也可以直接在WeGame启动自己想玩的游戏</p>
+<h2 id="2-docker如何工作"><a href="#2-docker如何工作" class="headerlink" title="2. docker如何工作"></a>2. docker如何工作</h2><p><img src="/../imgList/docker/docker-11.png" alt="docker 运行工作原理"></p>
+<h2 id="3-docker发布自己制作的镜像"><a href="#3-docker发布自己制作的镜像" class="headerlink" title="3. docker发布自己制作的镜像"></a>3. docker发布自己制作的镜像</h2><p><img src="/../imgList/docker/docker-12.png" alt="制作自己的镜像"></p>
+<h2 id="4-做个实验：使用docker下载nginx-并修改首页页面内容，并且将内容发布至社区中共所有人使用"><a href="#4-做个实验：使用docker下载nginx-并修改首页页面内容，并且将内容发布至社区中共所有人使用" class="headerlink" title="4. 做个实验：使用docker下载nginx 并修改首页页面内容，并且将内容发布至社区中共所有人使用"></a>4. 做个实验：使用docker下载nginx 并修改首页页面内容，并且将内容发布至社区中共所有人使用</h2><p><strong>完成步骤：</strong><br><a href="https://hub.docker.com/">docker指定版本查看页面✈</a></p>
+<ul>
+<li>下载nginx <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 1. 使用名称查看都有那些版本</span><br><span class="line">docker search nginx </span><br><span class="line"></span><br><span class="line"># 2. 下载 nginx(默认下载最新的)</span><br><span class="line">docker pull nginx</span><br><span class="line"></span><br><span class="line"># 3. 查看下载的镜像</span><br><span class="line">docker images </span><br><span class="line"></span><br><span class="line"># 4. 删除镜像</span><br><span class="line">docker rmi 镜像ID</span><br></pre></td></tr></table></figure></li>
+<li>容器命令<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 1. 运行容器</span><br><span class="line">docker run nginx(要加版本号，否则还会执行docker pull 下载最新版本)</span><br><span class="line">有很多参数 建议先查看 docker run --help 看看</span><br><span class="line">例如 -d 后台运行，不至于阻塞命令行等</span><br><span class="line">-p 端口映射 -p 页面访问端口:docker中nginx端口</span><br><span class="line"></span><br><span class="line">docker run -d --name mynginx -p 80:80 nginx</span><br><span class="line"></span><br><span class="line"># 2. 停止容器</span><br><span class="line">docker stop 容器ID</span><br><span class="line"></span><br><span class="line"># 3. 启动容器</span><br><span class="line">docker start 容器ID</span><br><span class="line"></span><br><span class="line"># 4. 重启容器</span><br><span class="line">docker restart 容器ID</span><br><span class="line"></span><br><span class="line"># 5. 查看状态</span><br><span class="line">docker status</span><br><span class="line"></span><br><span class="line"># 6. 查看日志</span><br><span class="line">docker logs</span><br><span class="line"></span><br><span class="line"># 7. 删除容器</span><br><span class="line">docker rm 容器ID (需要先停止容器)</span><br><span class="line">docker rm -f 容器ID(强制删除，不需要停止)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>修改页面内容<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 使用命令进行数据交互 固定参数 -it</span><br><span class="line">docker exec -it mynginx(你的容器名称) /bin/bash(使用bash控制台进行交互)</span><br><span class="line"></span><br><span class="line"># 进入容器内部后打开页面</span><br><span class="line">cd /usr/share/nginx/html</span><br><span class="line"></span><br><span class="line"># 使用 vi命令进行修改页面会发现报错 容器为了保持轻量级 并未使用vi</span><br><span class="line">暂时使用手动修改吧</span><br><span class="line"> echo &quot;&lt;h1&gt;hello Docker muye&lt;/h1&gt;&quot; &gt; index.html</span><br><span class="line">刷新页面会显示 hello Docker muye</span><br></pre></td></tr></table></figure></li>
+<li>保存镜像<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 推出内部容器</span><br><span class="line">exit</span><br><span class="line"></span><br><span class="line"># 保存容器</span><br><span class="line">docker commit -m &quot;update index.html(这里写的是修改内容)&quot; mynginx(容器名称，也可以是容器ID) mynginx(指定保存的镜像):v1.0 (版本号)</span><br><span class="line"></span><br><span class="line"># 使用命令查看到自己的镜像</span><br><span class="line">docker images</span><br></pre></td></tr></table></figure></li>
+<li>发布社区<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 使用命令压缩成tar</span><br><span class="line">docker save -o mynginx.tar mynginx:v1.0</span><br><span class="line"></span><br><span class="line"># 加载镜像 （执行完命令后，docker镜像里边就有该镜像了）</span><br><span class="line">docker load -i mynginx.tar</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>项目部署</category>
+        <category>docker学习</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
 </search>
