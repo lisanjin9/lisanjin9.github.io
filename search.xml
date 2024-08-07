@@ -480,7 +480,7 @@
 <li>保存镜像<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 推出内部容器</span><br><span class="line">exit</span><br><span class="line"></span><br><span class="line"># 保存容器</span><br><span class="line">docker commit -m &quot;update index.html(这里写的是修改内容)&quot; mynginx(容器名称，也可以是容器ID) mynginx(指定保存的镜像):v1.0 (版本号)</span><br><span class="line"></span><br><span class="line"># 使用命令查看到自己的镜像</span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"># 使用命令压缩成tar</span><br><span class="line">docker save -o mynginx.tar mynginx:v1.0</span><br><span class="line"></span><br><span class="line"># 加载镜像 （执行完命令后，docker镜像里边就有该镜像了）</span><br><span class="line">docker load -i mynginx.tar</span><br></pre></td></tr></table></figure></li>
 <li>发布社区<br><a href="https://hub.docker.com/">现在这里注册一个社区账号</a><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 登录到 dockerhub中</span><br><span class="line">docker login</span><br><span class="line">输入用户名</span><br><span class="line">输入密码</span><br><span class="line">显示Login successded   则登陆成功</span><br><span class="line"></span><br><span class="line"># 给镜像修改名字 docker官方要求</span><br><span class="line">docker tag mynginx:v1.0  用户名/mynginx:v1.0</span><br><span class="line"></span><br><span class="line"># 推送社区</span><br><span class="line">docker push 用户名/mynginx:v1.0</span><br></pre></td></tr></table></figure></li>
 </ul>
-]]></content>
+<h2 id="docker下的nginx目录挂载"><a href="#docker下的nginx目录挂载" class="headerlink" title="docker下的nginx目录挂载"></a>docker下的nginx目录挂载</h2>]]></content>
       <categories>
         <category>项目部署</category>
         <category>docker学习</category>
