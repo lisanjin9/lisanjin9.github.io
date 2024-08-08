@@ -433,9 +433,6 @@
 
 
 
-
-
-
 <h1 id="docker-运行nginx失败"><a href="#docker-运行nginx失败" class="headerlink" title="docker 运行nginx失败"></a>docker 运行nginx失败</h1><p><img src="/../imgList/Nginx/nginx-5.png" alt="失败图"></p>
 <h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2><ol>
 <li>重启docker<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure></li>
