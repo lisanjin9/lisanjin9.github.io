@@ -352,7 +352,7 @@
 <p><img src="/../imgList/docker/docker-6.png" alt="启动docker"></p>
 <h1 id="7-设置docker开机启动"><a href="#7-设置docker开机启动" class="headerlink" title="7. 设置docker开机启动"></a>7. 设置docker开机启动</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">设置开机启动</span><br><span class="line">systemctl enable docker</span><br><span class="line"></span><br><span class="line">systemctl disable docker</span><br></pre></td></tr></table></figure>
 
-<h1 id="8-配置镜像"><a href="#8-配置镜像" class="headerlink" title="8. 配置镜像"></a>8. 配置镜像</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir -p /etc/docker</span><br><span class="line"></span><br><span class="line">tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://780urbjd.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line"># 检查配置</span><br><span class="line">cat /etc/docker/daemon.json</span><br></pre></td></tr></table></figure>
+<h1 id="8-配置镜像"><a href="#8-配置镜像" class="headerlink" title="8. 配置镜像"></a>8. 配置镜像</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir -p /etc/docker</span><br><span class="line"></span><br><span class="line"># 这镜像折磨了我很长时间， docker pull的时候下载不下来 换个镜像</span><br><span class="line">第一种 阿里云</span><br><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://780urbjd.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">第二种：腾讯云</span><br><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line"> &#123;</span><br><span class="line">   &quot;registry-mirrors&quot;: [&quot;https://mirror.ccs.tencentyun.com/&quot;]</span><br><span class="line"> &#125;</span><br><span class="line">  EOF</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 检查配置</span><br><span class="line">cat /etc/docker/daemon.json</span><br></pre></td></tr></table></figure>
 
 <h1 id="9-重启docker"><a href="#9-重启docker" class="headerlink" title="9. 重启docker"></a>9. 重启docker</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line"></span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
 
@@ -483,7 +483,24 @@
 <p><strong>搞了好几天也没有办法正常下载nginx，重装服务器系统都试了好几次没有用，最后发现是阿里云的镜像有问题，换成腾讯云后立刻就好 还是得雨露均沾啊</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">&gt; &#123;</span><br><span class="line">&gt;   &quot;registry-mirrors&quot;: [&quot;https://mirror.ccs.tencentyun.com/&quot;]</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; EOF</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h2 id="docker下的nginx目录挂载"><a href="#docker下的nginx目录挂载" class="headerlink" title="docker下的nginx目录挂载"></a>docker下的nginx目录挂载</h2>]]></content>
+<h2 id="docker下的nginx目录挂载"><a href="#docker下的nginx目录挂载" class="headerlink" title="docker下的nginx目录挂载"></a>docker下的nginx目录挂载</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+<h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><h2 id="docker-pull-拉取镜像失败-一直报错"><a href="#docker-pull-拉取镜像失败-一直报错" class="headerlink" title="docker pull 拉取镜像失败 一直报错"></a>docker pull 拉取镜像失败 一直报错</h2><p>基本上都是镜像源出错<br>我原本的镜像源是<strong>阿里云镜像源</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://780urbjd.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+<p>拉去nginx一直失败 后来修改为<strong>腾讯云镜像源</strong>后就正常了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line"> &#123;</span><br><span class="line">   &quot;registry-mirrors&quot;: [&quot;https://mirror.ccs.tencentyun.com/&quot;]</span><br><span class="line"> &#125;</span><br><span class="line">  EOF</span><br></pre></td></tr></table></figure>
+<h2 id="启动nginx后页面访问不了"><a href="#启动nginx后页面访问不了" class="headerlink" title="启动nginx后页面访问不了"></a>启动nginx后页面访问不了</h2><p>启动nginx后页面访问不了，服务器防火墙已经开放80端口还是启动不了<br>具体原因我也不清楚，但我知道有<strong>两个防火墙</strong> 一个是云服务商页面的防火墙  一个是服务器里面的防火墙</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">举个例子 开放nginx的80端口，</span><br><span class="line">firewall-cmd --zone=public --add-port=80/tcp --permanent （--permanent永久生效，没有此参数重启后失效）</span><br><span class="line"></span><br><span class="line">firewall-cmd --reload （重新加载）</span><br></pre></td></tr></table></figure>
+<p>然后页面就能访问了</p>
+<h2 id="docker挂在目录后启动报错-iptables-failed-iptables-–wait-t-nat-A-DOCKER-p-tcp-d-0-0-–dport-80"><a href="#docker挂在目录后启动报错-iptables-failed-iptables-–wait-t-nat-A-DOCKER-p-tcp-d-0-0-–dport-80" class="headerlink" title="docker挂在目录后启动报错 iptables failed: iptables –wait -t nat -A DOCKER -p tcp -d 0&#x2F;0 –dport 80"></a>docker挂在目录后启动报错 iptables failed: iptables –wait -t nat -A DOCKER -p tcp -d 0&#x2F;0 –dport 80</h2><p>很多人都说是iptables版本的问题<br>其实重启一下docker,重新注册链接就可以了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>项目部署</category>
         <category>docker学习</category>
