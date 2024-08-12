@@ -480,7 +480,7 @@
 <p><strong>搞了好几天也没有办法正常下载nginx，重装服务器系统都试了好几次没有用，最后发现是阿里云的镜像有问题，换成腾讯云后立刻就好 还是得雨露均沾啊</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">&gt; &#123;</span><br><span class="line">&gt;   &quot;registry-mirrors&quot;: [&quot;https://mirror.ccs.tencentyun.com/&quot;]</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; EOF</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h2 id="docker下的nginx目录挂载"><a href="#docker下的nginx目录挂载" class="headerlink" title="docker下的nginx目录挂载"></a>docker下的nginx目录挂载</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="5-docker下的nginx目录挂载"><a href="#5-docker下的nginx目录挂载" class="headerlink" title="5. docker下的nginx目录挂载"></a>5. docker下的nginx目录挂载</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --name mynginx -p 80:80 -v /limuye/nginx/html:/usr/share/nginx/html nginx</span><br><span class="line"># -v天禧自己的目录：目标目录(也就是nginx目录中对应的文件夹)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
