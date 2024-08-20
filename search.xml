@@ -511,4 +511,19 @@
         <tag>docker</tag>
       </tags>
   </entry>
+  <entry>
+    <title>使用docker部署项目配置文件合集</title>
+    <url>/2024/08/20/%E4%BD%BF%E7%94%A8docker%E9%83%A8%E7%BD%B2%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%90%88%E9%9B%86/</url>
+    <content><![CDATA[<h1 id="DockerFile"><a href="#DockerFile" class="headerlink" title="DockerFile"></a>DockerFile</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">FROM openjdk:8</span><br><span class="line"></span><br><span class="line">LABEL author=limuye</span><br><span class="line"></span><br><span class="line">COPY yidada-backend-0.0.1-SNAPSHOT.jar /yidada-backend-0.0.1-SNAPSHOT.jar</span><br><span class="line"></span><br><span class="line">EXPOSE 8101</span><br><span class="line"></span><br><span class="line">ENTRYPOINT [&quot;java&quot; , &quot;-jar&quot; , &quot;yidada-backend-0.0.1-SNAPSHOT.jar&quot;]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="compose-yml"><a href="#compose-yml" class="headerlink" title="compose.yml"></a>compose.yml</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">name: yidada</span><br><span class="line">services:</span><br><span class="line">  mysql:</span><br><span class="line">    container_name: mysql</span><br><span class="line">    image: mysql:8.0</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;3306:3306&quot;</span><br><span class="line">    environment:</span><br><span class="line">      MYSQL_ROOT_PASSWORD: Lxc592122.</span><br><span class="line">      MYSQL_DATABASE: jindada</span><br><span class="line">    volumes:</span><br><span class="line">      - mysql-data:/var/lib/mysql</span><br><span class="line">      - /root/yidada/myconf:/etc/mysql/conf.d</span><br><span class="line">    restart: always</span><br><span class="line">    networks:</span><br><span class="line">      - yidada</span><br><span class="line"></span><br><span class="line">  nginx:</span><br><span class="line">    container_name: nginx</span><br><span class="line">    image: nginx</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;8080:80&quot;</span><br><span class="line">    volumes:</span><br><span class="line">      - /root/yidada/nginx/conf/nginx.conf:/etc/nginx/nginx.conf</span><br><span class="line">      - /root/yidada/nginx/log:/var/log/nginx</span><br><span class="line">      - /root/yidada/nginx/www:/usr/share/nginx/html</span><br><span class="line">    restart: always</span><br><span class="line">    networks:</span><br><span class="line">      - yidada</span><br><span class="line">    privileged: true</span><br><span class="line"></span><br><span class="line">  yidada:</span><br><span class="line">    container_name: yidada</span><br><span class="line">    image: yidada:v1.0</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;8101:8101&quot;</span><br><span class="line">    depends_on:</span><br><span class="line">      - mysql</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">volumes:</span><br><span class="line">  mysql-data:</span><br><span class="line">  yidada:</span><br><span class="line">  nginx:</span><br><span class="line">  ngconf:</span><br><span class="line">networks:</span><br><span class="line">  yidada:</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>项目部署</category>
+      </categories>
+      <tags>
+        <tag>项目部署</tag>
+        <tag>docker</tag>
+      </tags>
+  </entry>
 </search>
